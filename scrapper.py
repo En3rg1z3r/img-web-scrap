@@ -5,10 +5,10 @@ import urllib
 import urllib.request
 import time
 
-driverPath = r"/home/dedsec/webscrap/chromedriver"
+driverPath = r"/home/dedsec/webscrap/chromedriver" #insert your chromedriver path here 
 
 linkPrefix = "https://www.google.com/search?q="
-linkSuffix = "&sxsrf=AOaemvJltkJx9YryOUmZYZwu6cdhVjOFQw:1631437222344&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjSmfGgifnyAhXBzKQKHYigArgQ_AUoAXoECAEQAw&biw=952&bih=968"
+linkSuffix = "&sxsrf=AOaemvJltkJx9YryOUmZYZwu6cdhVjOFQw:1631437222344&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjSmfGgifnyAhXBzKQKHYigArgQ_AUoAXoECAEQAw&biw=952&bih=968" #can be changed
 
 saveFolder = "Raw_Data/"
 
@@ -23,7 +23,7 @@ def downloadImages(saveFolder):
     saveFolder += searchTerm +"/" 
     if not os.path.exists(saveFolder):
         os.mkdir(saveFolder)
-    #searchTerm += " food"
+    #searchTerm += " food" for more accurate result , add custom keywords 
     n_images = int(input("how many images do you want : "))
     url = linkPrefix+searchTerm+linkSuffix
     driver = webdriver.Chrome(driverPath)
@@ -37,7 +37,7 @@ def downloadImages(saveFolder):
         lenOfPage = driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
         try:
             driver.find_element_by_xpath(
-            """//*[@id="islmp"]/div/div/div/div[1]/div[2]/div[2]/input""").click()
+            """//*[@id="islmp"]/div/div/div/div[1]/div[2]/div[2]/input""").click() #auto click on "load more" 
         except:
             pass
         if lastCount==lenOfPage:
