@@ -5,7 +5,7 @@ import urllib
 import urllib.request
 import time
 
-driverPath = r"/home/dedsec/webscrap/chromedriver" #insert your chromedriver path here 
+driverPath = r"/home/dedsec/img-web-scrap/chromedriver" #insert your chromedriver path here 
 
 linkPrefix = "https://www.google.com/search?q="
 linkSuffix = "&sxsrf=AOaemvJltkJx9YryOUmZYZwu6cdhVjOFQw:1631437222344&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjSmfGgifnyAhXBzKQKHYigArgQ_AUoAXoECAEQAw&biw=952&bih=968" #can be changed
